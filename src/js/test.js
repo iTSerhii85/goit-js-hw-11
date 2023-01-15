@@ -6,7 +6,7 @@ import debounce from "lodash.debounce";
 // import SimpleLightbox from "simplelightbox";
 
 const form = document.querySelector('#search-form');
-const searchBtn = form.querySelector('.search-btn');
+// const searchBtn = form.querySelector('.search-btn');
 
 const DEBOUNCE_DELAY = 300;
 let formData;
