@@ -29,6 +29,7 @@ else {
   </div>`).join('');
   
   gallery.insertAdjacentHTML('beforeend', markup);
+
    }
 }
 

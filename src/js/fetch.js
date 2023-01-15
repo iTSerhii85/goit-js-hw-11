@@ -1,14 +1,16 @@
 import axios from 'axios';
 const axios = require('axios').default;
 
-async function fetchPictures(name) {
+async function fetchPictures(name, page = 1) {
+
     return await axios.get('https://pixabay.com/api/', {
         params: {
             key: '32843857-becb0ae38391759a35788f5eb',
             q: `${name}`,
             image_type: 'photo',
             safeSearch: 'true',
-            pageLimit: '40',
+            page: `${page}`,
+            per_page: '40',
         },
     })
 }
