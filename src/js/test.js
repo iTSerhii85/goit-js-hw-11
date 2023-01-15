@@ -1,8 +1,9 @@
 import {fetchPictures} from "./fetch";
 import {createMarkup} from './markup';
 
-import Notiflix from 'notiflix';
+// import Notiflix from 'notiflix';
 import debounce from "lodash.debounce";
+// import SimpleLightbox from "simplelightbox";
 
 const form = document.querySelector('#search-form');
 const searchBtn = form.querySelector('.search-btn');
