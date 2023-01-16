@@ -12,7 +12,9 @@ function createMarkup (obj){
 else {
   const markup = images.map(obj =>
  `<div class="photo-card">
+    <div class="wrapper">
      <img src="${obj.webformatURL}" alt="${obj.tags}" loading="lazy" />
+    </div>
      <div class="info">
        <p class="info-item">
          <b>Likes: ${obj.likes}</b>
