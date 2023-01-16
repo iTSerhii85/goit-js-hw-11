@@ -32,7 +32,7 @@ else {
   </div>`).join('');
   
   gallery.innerHTML = markup;
-
+  Notiflix.Notify.success(`Hooray! We found ${obj.data.totalHits} images.`);
    }
 }
 
