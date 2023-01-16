@@ -1,5 +1,4 @@
 import axios from 'axios';
-const axios = require('axios').default;
 
 async function fetchPictures(name, page = 1) {
 
