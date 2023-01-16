@@ -14,6 +14,7 @@ async function fetchPictures(name, page = 1) {
     })
 }
 
+
 export {fetchPictures};
 
 

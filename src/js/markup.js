@@ -1,5 +1,6 @@
 import Notiflix from 'notiflix';
 
+
 function createMarkup (obj){
   const gallery = document.querySelector('.gallery');
 

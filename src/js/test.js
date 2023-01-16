@@ -1,6 +1,7 @@
 import {fetchPictures} from "./fetch";
 import {createMarkup} from './markup';
 
+
 import Notiflix from 'notiflix';
 import debounce from "lodash.debounce";
 import SimpleLightbox from "simplelightbox";
