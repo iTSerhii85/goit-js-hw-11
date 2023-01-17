@@ -1,8 +1,12 @@
 import Notiflix from 'notiflix';
 
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.css";
+let gallery = new SimpleLightbox('.gallery a');
+
 
 function createMarkup (obj){
-  const gallery = document.querySelector('.gallery');
+  const galleryEl = document.querySelector('.gallery');
 
   const images = obj.data.hits;
 
@@ -11,7 +15,8 @@ function createMarkup (obj){
   }
 else {
   const markup = images.map(obj =>
- `<div class="photo-card">
+ `<a class="gallery__item" href="${obj.largeImageURL}">
+   <div class="photo-card">
     <div class="wrapper">
      <img src="${obj.webformatURL}" alt="${obj.tags}" loading="lazy" />
     </div>
@@ -29,15 +34,17 @@ else {
          <b> ⭳ Downloads: ${obj.downloads}</b>
        </p>
      </div>
-  </div>`).join('');
+   </div>
+   </a>`).join('');
   
-  gallery.innerHTML = markup;
+  galleryEl.innerHTML = markup;
   Notiflix.Notify.success(`Hooray! We found ${obj.data.totalHits} images.`);
+  gallery.refresh();
    }
 }
 
 function createMoreMarkup (obj){
-  const gallery = document.querySelector('.gallery');
+  const galleryEl = document.querySelector('.gallery');
 
   const images = obj.data.hits;
 
@@ -46,7 +53,8 @@ function createMoreMarkup (obj){
   }
 else {
   const markup = images.map(obj =>
- `<div class="photo-card">
+ `<a class="gallery__item" href="${obj.largeImageURL}">
+   <div class="photo-card">
     <div class="wrapper">
      <img src="${obj.webformatURL}" alt="${obj.tags}" loading="lazy" />
     </div>
@@ -64,10 +72,11 @@ else {
          <b> ⭳ Downloads: ${obj.downloads}</b>
        </p>
      </div>
-  </div>`).join('');
+  </div>
+  </a>`).join('');
   
-  gallery.insertAdjacentHTML('beforeend', markup);
-
+  galleryEl.insertAdjacentHTML('beforeend', markup);
+  gallery.refresh();
    }
 }
 

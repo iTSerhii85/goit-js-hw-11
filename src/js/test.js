@@ -3,11 +3,15 @@ import {createMarkup, createMoreMarkup} from './markup';
 
 import Notiflix from 'notiflix';
 import debounce from "lodash.debounce";
+
 import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.css";
 
 const form = document.querySelector('#search-form');
 const loadMoreBtn = document.querySelector('.load-more');
 const img = document.querySelector('.img');
+
+let gallery = new SimpleLightbox('.gallery a');
 
 const DEBOUNCE_DELAY = 300;
 let formData;
@@ -30,6 +34,7 @@ function onFormSubmit (evt){
         loadMoreBtn.hidden = false;
     }).catch(error => console.log(error));
     page = 1;
+    gallery.refresh()
 }
 
 function onLoadMore () {
@@ -41,4 +46,5 @@ function onLoadMore () {
             Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
         }
     }).catch(error => console.log(error));
+    gallery.refresh()
 }
