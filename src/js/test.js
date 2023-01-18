@@ -38,22 +38,26 @@ function onFormSubmit (evt){
 }
 
 function onLoadMore () {
+    const { height: cardHeight } = document
+    .querySelector(".gallery")
+    .firstElementChild.getBoundingClientRect();
+
     page += 1;
     loadMore(formData, page).then(obj => {
         createMoreMarkup(obj);
+
+          window.scrollBy({
+              top: cardHeight * 2,
+              behavior: "smooth",
+            });
+
         if (page*40 >= obj.data.totalHits){
             loadMoreBtn.hidden = true;
             Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
         }
     }).catch(error => console.log(error));
+
     gallery.refresh();
 }
 
-// const { height: cardHeight } = document
-// .querySelector(".gallery")
-// .firstElementChild.getBoundingClientRect();
 
-//   window.scrollBy({
-//       top: cardHeight * 2,
-//       behavior: "smooth",
-//     });
