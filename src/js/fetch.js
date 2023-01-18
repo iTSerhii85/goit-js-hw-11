@@ -30,16 +30,3 @@ async function loadMore(name, page) {
 
 
 export {fetchPictures, loadMore};
-
-
-
-// async function fetchPictures(name) {
-//     const BASE_URL = 'https://pixabay.com/api';
-//     const KEY = '32843857-becb0ae38391759a35788f5eb';
-//     const safeSearch = true;
-//     const pageLimit = '40';
-
-//     const response = await fetch(`${BASE_URL}/?key=${KEY}&q=${name}&image_type=photo&orientation=horizontal&safesearch=${safeSearch}&per_page=${pageLimit}`);
-//     const pictures = await response.json();
-//     return pictures;
-// }

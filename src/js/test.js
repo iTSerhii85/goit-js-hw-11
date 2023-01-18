@@ -34,7 +34,7 @@ function onFormSubmit (evt){
         loadMoreBtn.hidden = false;
     }).catch(error => console.log(error));
     page = 1;
-    gallery.refresh()
+    gallery.refresh();
 }
 
 function onLoadMore () {
@@ -46,5 +46,14 @@ function onLoadMore () {
             Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
         }
     }).catch(error => console.log(error));
-    gallery.refresh()
+    gallery.refresh();
 }
+
+// const { height: cardHeight } = document
+// .querySelector(".gallery")
+// .firstElementChild.getBoundingClientRect();
+
+//   window.scrollBy({
+//       top: cardHeight * 2,
+//       behavior: "smooth",
+//     });
