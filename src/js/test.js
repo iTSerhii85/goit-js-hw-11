@@ -30,7 +30,7 @@ function onFormSubmit (evt){
     img.hidden = true;
     evt.preventDefault();
     fetchPictures(formData).then(obj => {
-        createMarkup(obj)
+        createMarkup(obj);
         loadMoreBtn.hidden = false;
     }).catch(error => console.log(error));
     page = 1;
@@ -43,7 +43,7 @@ function onLoadMore () {
     .firstElementChild.getBoundingClientRect();
 
     page += 1;
-    loadMore(formData, page).then(obj => {
+    fetchPictures(formData, page).then(obj => {
         createMoreMarkup(obj);
 
           window.scrollBy({
