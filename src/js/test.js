@@ -1,4 +1,4 @@
-import {fetchPictures, loadMore} from "./fetch";
+import {fetchPictures} from "./fetch";
 import {createMarkup, createMoreMarkup} from './markup';
 
 import Notiflix from 'notiflix';
